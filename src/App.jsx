@@ -1,36 +1,6 @@
-import reactImg from './assets/react-core-concepts.png';
 import { CORE_CONCEPTS } from './data.js';
-
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  const description = reactDescriptions[genRandomInt(2)]
-  // Deve-se retornar um valor dentro dessa função
-  //O valor retornado deve ser o conteúdo que deve ser exibido na tela por esse componentes
-  return (
-    <header>
-      <img src={reactImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {/* "{}" = Quero gerar um valor dinâmico */}
-        {description} React concepts you will need for almost any app you are going to build!
-      </p>
-    </header>
-  );
-}
-/* {} é usado para desestruturar objeto
-Ex: {image, title, description} dai nao precisa usar porps.title etc */
-function CoreConcept(props) {
-  return <li>
-    <img src={props.image} alt={props.title}></img>
-    <h3>{props.title}</h3>
-    <p>{props.description}</p>
-  </li>
-}
+import Header from './components/Header/Header.jsx';
+import CoreConcept from './components/CoreConcept.jsx';
 
 function App() {
   //Posso usar as funções do componente como elementos HTML normais dentro do código JSX
